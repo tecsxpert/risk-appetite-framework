@@ -4,8 +4,8 @@ import com.campuspe.riskappetiteframework.entity.Risk;
 import com.campuspe.riskappetiteframework.exception.ResourceNotFoundException;
 import com.campuspe.riskappetiteframework.repository.RiskRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @Service
 public class RiskService {
@@ -22,12 +22,12 @@ public class RiskService {
         return riskRepository.save(risk);
     }
 
-    // READ ALL
-    public List<Risk> getAllRisks() {
-        return riskRepository.findAll();
+    // GET ALL (Paginated)
+    public Page<Risk> getAllRisks(Pageable pageable) {
+        return riskRepository.findAll(pageable);
     }
 
-    // READ BY ID
+    // GET BY ID
     public Risk getRiskById(Long id) {
         return riskRepository.findById(id)
                 .orElseThrow(() ->
