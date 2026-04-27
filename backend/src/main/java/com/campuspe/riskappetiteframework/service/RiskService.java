@@ -1,5 +1,7 @@
 package com.campuspe.riskappetiteframework.service;
 
+import com.campuspe.riskappetiteframework.dto.RiskDTO;
+import com.campuspe.riskappetiteframework.mapper.RiskMapper;
 import com.campuspe.riskappetiteframework.entity.Risk;
 import com.campuspe.riskappetiteframework.exception.ResourceNotFoundException;
 import com.campuspe.riskappetiteframework.repository.RiskRepository;
@@ -17,21 +19,29 @@ public class RiskService {
     }
 
     // CREATE
-    public Risk createRisk(Risk risk) {
-        validateRisk(risk);
-        return riskRepository.save(risk);
+    public RiskDTO createRisk(RiskDTO dto) {
+    Risk risk = RiskMapper.toEntity(dto);
+    validateRisk(risk);
+
+    Risk savedRisk = riskRepository.save(risk);
+
+    return RiskMapper.toDTO(savedRisk);
     }
 
     // GET ALL (Paginated)
-    public Page<Risk> getAllRisks(Pageable pageable) {
-        return riskRepository.findAll(pageable);
+    public Page<RiskDTO> getAllRisks(Pageable pageable) {
+    return riskRepository.findAll(pageable)
+            .map(RiskMapper::toDTO);
     }
 
     // GET BY ID
-    public Risk getRiskById(Long id) {
-        return riskRepository.findById(id)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Risk not found with id: " + id));
+    public RiskDTO getRiskById(Long id) {
+    Risk risk = riskRepository.findById(id)
+            .orElseThrow(() ->
+                    new ResourceNotFoundException(
+                            "Risk not found with id: " + id));
+
+    return RiskMapper.toDTO(risk);
     }
 
     // UPDATE
