@@ -5,7 +5,6 @@ import com.campuspe.riskappetiteframework.entity.Risk;
 
 public class RiskMapper {
 
-    // Convert Entity → DTO
     public static RiskDTO toDTO(Risk risk) {
         return RiskDTO.builder()
                 .id(risk.getId())
@@ -15,10 +14,12 @@ public class RiskMapper {
                 .status(risk.getStatus())
                 .riskScore(risk.getRiskScore())
                 .owner(risk.getOwner())
+                .aiDescription(risk.getAiDescription())
+                .aiRecommendations(risk.getAiRecommendations())
+                .aiProcessed(risk.getAiProcessed())
                 .build();
     }
 
-    // Convert DTO → Entity
     public static Risk toEntity(RiskDTO dto) {
         return Risk.builder()
                 .id(dto.getId())

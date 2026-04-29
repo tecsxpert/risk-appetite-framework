@@ -28,4 +28,9 @@ public class RiskDTO {
 
     @NotBlank(message = "Owner is required")
     private String owner;
+
+    // AI fields - returned in response so frontend can display them
+    private String aiDescription;
+    private String aiRecommendations;
+    private Boolean aiProcessed;
 }

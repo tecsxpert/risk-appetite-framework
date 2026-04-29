@@ -34,7 +34,7 @@ public class Risk {
     private String category;
 
     @Column(nullable = false)
-    private String status; // OPEN, IN_PROGRESS, CLOSED
+    private String status;
 
     @NotNull(message = "Risk score is required")
     @Column(nullable = false)
@@ -42,6 +42,16 @@ public class Risk {
 
     @Column(nullable = false)
     private String owner;
+
+    // AI fields added Day 7
+    @Column(columnDefinition = "TEXT")
+    private String aiDescription;
+
+    @Column(columnDefinition = "TEXT")
+    private String aiRecommendations;
+
+    @Column
+    private Boolean aiProcessed = false;
 
     @CreatedDate
     @Column(updatable = false)
