@@ -43,27 +43,33 @@ public class RiskService {
 
     return RiskMapper.toDTO(risk);
     }
-
+    
     // UPDATE
-    public Risk updateRisk(Long id, Risk updatedRisk) {
-        Risk existing = getRiskById(id);
+    public RiskDTO updateRisk(Long id, RiskDTO dto) {
 
-        existing.setTitle(updatedRisk.getTitle());
-        existing.setDescription(updatedRisk.getDescription());
-        existing.setCategory(updatedRisk.getCategory());
-        existing.setStatus(updatedRisk.getStatus());
-        existing.setRiskScore(updatedRisk.getRiskScore());
-        existing.setOwner(updatedRisk.getOwner());
+        Risk existing = riskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Risk not found"));
 
-        return riskRepository.save(existing);
+        existing.setTitle(dto.getTitle());
+        existing.setDescription(dto.getDescription());
+        existing.setCategory(dto.getCategory());
+        existing.setStatus(dto.getStatus());
+        existing.setRiskScore(dto.getRiskScore());
+        existing.setOwner(dto.getOwner());
+
+        Risk updated = riskRepository.save(existing);
+
+        return RiskMapper.toDTO(updated);
     }
-
-    // DELETE
+    
+    // DELETE 
     public void deleteRisk(Long id) {
-        Risk existing = getRiskById(id);
+        Risk existing = riskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Risk not found"));
+
         riskRepository.delete(existing);
     }
-
+    
     // VALIDATION
     private void validateRisk(Risk risk) {
         if (risk.getTitle() == null || risk.getTitle().isEmpty()) {

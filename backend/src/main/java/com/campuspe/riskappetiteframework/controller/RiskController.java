@@ -36,6 +36,15 @@ public class RiskController {
                 riskService.getRiskById(id)
         );
     }
+    
+ // DELETE /{id}
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteRisk(@PathVariable Long id) {
+
+        riskService.deleteRisk(id);
+
+        return ResponseEntity.ok("Risk deleted successfully");
+    }
 
     // POST /create
     @PostMapping("/create")
