@@ -8,13 +8,8 @@ batch_process_bp = Blueprint('batch_process', __name__)
 
 @batch_process_bp.route('/batch-process', methods=['POST'])
 def batch_process():
-    """
-    Day 11: Accept up to 20 items, process each with 100ms delay,
-    return results array
-    """
     data = request.get_json()
 
-    # Validate input
     if not data or 'items' not in data:
         return jsonify({"error": "Missing 'items' field"}), 400
 
@@ -35,11 +30,9 @@ def batch_process():
 
     for index, item in enumerate(items):
         try:
-            # 100ms delay between each item as per spec
             if index > 0:
-                time.sleep(0.1)
+                time.sleep(0.1)  # 100ms delay between items
 
-            # Validate each item has text
             if not isinstance(item, dict) or 'text' not in item:
                 results.append({
                     "index": index,
@@ -63,20 +56,19 @@ def batch_process():
                 failed += 1
                 continue
 
-            # Call Groq AI for each item
-            prompt = f"""Analyse this risk item and return ONLY valid JSON with no extra text:
+            # Shortened prompt — Day 13 optimisation
+            prompt = f"""Analyse this risk. Return ONLY valid JSON:
 {{
-  "risk_level": "LOW" or "MEDIUM" or "HIGH",
+  "risk_level": "LOW/MEDIUM/HIGH",
   "category": "category name",
-  "summary": "one sentence summary",
+  "summary": "one sentence",
   "action_required": true or false
 }}
 
-Risk item: {text}"""
+Risk: {text[:200]}"""
 
             ai_response = groq_client.call(prompt)
 
-            # Parse AI response
             try:
                 clean = ai_response.strip()
                 if clean.startswith("```"):
