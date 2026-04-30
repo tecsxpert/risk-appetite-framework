@@ -1,0 +1,17 @@
+Risk Governance Framework
+
+Risk governance refers to the structures, processes, and mechanisms that ensure risks are managed effectively across an organization.
+
+Key governance components:
+- Board Risk Committee: oversight of overall risk appetite
+- Chief Risk Officer: responsible for enterprise risk management
+- Risk Management Committee: operational risk oversight
+- Three Lines of Defence model implementation
+
+Risk appetite statement requirements:
+- Quantitative metrics for each risk category
+- Clear ownership and accountability
+- Regular review and board approval
+- Alignment with strategic objectives
+
+Effective risk governance includes clear escalation procedures, transparent risk reporting, and integration of risk management into business decision-making.

@@ -1,0 +1,18 @@
+Operational Risk Appetite Framework
+
+Operational risk is the risk of loss resulting from inadequate or failed internal processes, people, systems, or external events. It includes fraud risk, technology risk, and compliance risk.
+
+Operational risk appetite components:
+- Zero tolerance for fraud and misconduct
+- Maximum acceptable system downtime: 4 hours per year
+- Maximum acceptable data breach incidents: zero tolerance
+- Staff error rate threshold: less than 0.1% of transactions
+
+Key operational risk indicators:
+- Number of failed transactions per day
+- System availability percentage
+- Staff turnover rate in key roles
+- Number of regulatory breaches
+- Customer complaint volumes
+
+Mitigation strategies include robust internal controls, regular staff training, business continuity planning, and comprehensive insurance coverage.

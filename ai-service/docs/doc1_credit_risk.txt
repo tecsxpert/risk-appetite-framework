@@ -1,0 +1,17 @@
+Credit Risk Appetite Framework
+
+Credit risk is the potential for loss due to a borrower's failure to repay a loan or meet contractual obligations. Organizations must define their credit risk appetite clearly to guide lending decisions.
+
+Key components of credit risk appetite include:
+- Maximum acceptable default rate: typically 2-5% for retail lending
+- Concentration limits: no single borrower should exceed 10% of total portfolio
+- Credit score thresholds: minimum score of 650 for retail loans
+- Loan-to-value ratios: maximum 80% for mortgage lending
+
+Credit risk monitoring requires regular review of:
+- Non-performing loan ratios
+- Credit rating migrations
+- Industry concentration metrics
+- Geographic concentration metrics
+
+Best practices for credit risk management include stress testing portfolios quarterly, maintaining adequate loan loss provisions, and implementing early warning systems for deteriorating credits.

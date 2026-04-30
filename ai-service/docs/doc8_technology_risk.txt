@@ -1,0 +1,17 @@
+Technology Risk Appetite Framework
+
+Technology risk includes risks related to IT infrastructure, cybersecurity, data integrity, and technology-driven business disruption.
+
+Technology risk appetite:
+- Zero tolerance for critical data loss
+- Maximum acceptable cybersecurity incidents per year: zero critical incidents
+- System availability requirement: 99.9% uptime
+- Maximum acceptable recovery time objective: 4 hours
+
+Key technology risks:
+- Cybersecurity attacks including ransomware and phishing
+- System failures and outages
+- Data breaches and unauthorized access
+- Technology obsolescence
+
+Controls include multi-factor authentication, regular penetration testing, disaster recovery planning, and continuous security monitoring.
