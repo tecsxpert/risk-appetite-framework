@@ -8,6 +8,7 @@ import com.campuspe.riskappetiteframework.repository.RiskRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import java.util.List;
 
 @Service
 public class RiskService {
@@ -79,5 +80,20 @@ public class RiskService {
         if (risk.getRiskScore() == null || risk.getRiskScore() < 0) {
             throw new IllegalArgumentException("Risk score must be positive");
         }
+    }
+    
+    public List<RiskDTO> getByStatus(String status) {
+        return riskRepository.findByStatus(status)
+                .stream()
+                .map(RiskMapper::toDTO)
+                .toList();
+    }
+    
+    
+    public List<RiskDTO> getByCategory(String category) {
+        return riskRepository.findByCategory(category)
+                .stream()
+                .map(RiskMapper::toDTO)
+                .toList();
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/risks")
@@ -39,13 +40,13 @@ public class RiskController {
     
  // DELETE /{id}
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteRisk(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteRisk(@PathVariable Long id) {
 
         riskService.deleteRisk(id);
 
-        return ResponseEntity.ok("Risk deleted successfully");
+        return ResponseEntity.noContent().build(); // 204
     }
-
+    
     // POST /create
     @PostMapping("/create")
     public ResponseEntity<RiskDTO> createRisk(
@@ -57,6 +58,30 @@ public class RiskController {
         return new ResponseEntity<>(
                 savedRisk,
                 HttpStatus.CREATED
+        );
+    }
+    
+    @PutMapping("/update/{id}")
+    public ResponseEntity<RiskDTO> updateRisk(
+            @PathVariable Long id,
+            @Valid @RequestBody RiskDTO dto) {
+
+        RiskDTO updated = riskService.updateRisk(id, dto);
+
+        return ResponseEntity.ok(updated);
+    }
+    
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<RiskDTO>> getByCategory(@PathVariable String category) {
+        return ResponseEntity.ok(
+                riskService.getByCategory(category)
+        );
+    }
+    
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<RiskDTO>> getByStatus(@PathVariable String status) {
+        return ResponseEntity.ok(
+                riskService.getByStatus(status)
         );
     }
 }
