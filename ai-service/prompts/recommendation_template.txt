@@ -1,0 +1,10 @@
+As a Risk Management Expert, analyze the following risk context: {risk_context}
+
+Provide exactly 3 actionable recommendations to address these risks. 
+Format your response strictly as a JSON array of objects. 
+Each object must contain:
+1. "action_type": (e.g., Mitigation, Transfer, Avoidance, or Acceptance)
+2. "description": (A clear, professional recommendation)
+3. "priority": (High, Medium, or Low)
+
+Return only the JSON array without any additional text.

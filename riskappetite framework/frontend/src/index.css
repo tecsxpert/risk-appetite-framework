@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1B4F8A;
+  --primary-light: #2a6ab5;
+  --primary-dark: #0f3566;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at top left, #1e293b, #020617);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+input:focus, button:focus {
+  outline: none;
+}

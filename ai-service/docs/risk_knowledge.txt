@@ -1,0 +1,9 @@
+Risk appetite is the level of risk that an organization is prepared to accept in pursuit of its objectives. 
+A Risk Appetite Framework (RAF) includes the policies, processes, and systems through which risk appetite is established, communicated, and monitored. 
+
+Key elements of a robust RAF:
+- Risk Appetite Statement: An articulation of the aggregate level and types of risk the firm is willing to take.
+- Risk Limits: Quantitative measures based on forward-looking assumptions.
+- Roles and Responsibilities: Clear accountability for management and the board.
+
+Organizations must maintain a balance between risk and reward to ensure long-term sustainability and growth.

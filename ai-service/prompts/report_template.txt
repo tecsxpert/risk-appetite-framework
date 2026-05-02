@@ -1,0 +1,22 @@
+As a Senior Risk Analyst, generate a comprehensive Risk Appetite Report based on the following context:
+{retrieved_context}
+
+The user's specific focus is: {report_query}
+
+Your response must be a valid JSON object with the following structure:
+{{
+  "title": "A professional title for the report",
+  "executive_summary": "A high-level summary (2-3 sentences)",
+  "overview": "A detailed explanation of the risk landscape",
+  "top_items": [
+    "Key risk item 1",
+    "Key risk item 2",
+    "Key risk item 3"
+  ],
+  "recommendations": [
+    "Actionable step 1",
+    "Actionable step 2"
+  ]
+}}
+
+Return ONLY the raw JSON. No intro or outro text.
