@@ -2,10 +2,18 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 from routes.describe import describe_bp 
 from routes.recommend import recommend_bp  
-from routes.report import report_bp
+from routes.generate_report import generate_report_bp as report_bp
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app, resources={
+    r"/*": {
+        "origins": ["http://localhost:3000"]  # your frontend
+    }
+}) 
+import werkzeug
+
+werkzeug.serving.WSGIRequestHandler.server_version = ""
+werkzeug.serving.WSGIRequestHandler.sys_version = ""
 
 # 1. Root Endpoint for Basic service Info
 @app.route('/')
