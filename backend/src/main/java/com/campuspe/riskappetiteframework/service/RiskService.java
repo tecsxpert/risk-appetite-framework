@@ -8,11 +8,14 @@ import com.campuspe.riskappetiteframework.repository.RiskRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.List;
 
 @Service
 public class RiskService {
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(RiskService.class);
     private final RiskRepository riskRepository;
 
     public RiskService(RiskRepository riskRepository) {
@@ -95,5 +98,13 @@ public class RiskService {
                 .stream()
                 .map(RiskMapper::toDTO)
                 .toList();
+    }
+    public Page<RiskDTO> searchRisks(String keyword, Pageable pageable) {
+
+        return riskRepository
+                .findByTitleContainingIgnoreCaseOrCategoryContainingIgnoreCaseOrStatusContainingIgnoreCase(
+                        keyword, keyword, keyword, pageable
+                )
+                .map(RiskMapper::toDTO);
     }
 }
