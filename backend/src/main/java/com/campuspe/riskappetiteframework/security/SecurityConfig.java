@@ -18,19 +18,29 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
             .csrf(csrf -> csrf.disable())
-            .sessionManagement(session -> session.sessionCreationPolicy(
-                    org.springframework.security.config.http.SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/api/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                    .requestMatchers("/api/risks/**").authenticated()
-                    .anyRequest().permitAll()
+
+                // ✅ Allow login
+                .requestMatchers("/api/auth/**").permitAll()
+
+                // ✅ Allow Swagger (FULL COVERAGE)
+                .requestMatchers(
+                    "/swagger-ui/**",
+                    "/v3/api-docs/**",
+                    "/swagger-ui.html",
+                    "/swagger-resources/**",
+                    "/webjars/**"
+                ).permitAll()
+
+                // ✅ Secure APIs
+                .requestMatchers("/api/risks/**").authenticated()
+
+                .anyRequest().permitAll()
             )
-            .httpBasic(httpBasic -> httpBasic.disable())   // ❗ disable basic auth
-            .formLogin(form -> form.disable())             // ❗ disable login page
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
