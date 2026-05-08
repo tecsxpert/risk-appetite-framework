@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    env_file: .env
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      retries: 5
+
+  flyway:
+    image: flyway/flyway:10
+    depends_on:
+      mysql:
+        condition: service_healthy
+    env_file: .env
+    command: >
+      -url=jdbc:mysql://mysql:3306/${MYSQL_DATABASE}
+      -user=${MYSQL_USER}
+      -password=${MYSQL_PASSWORD}
+      -baselineOnMigrate=true
+      migrate
+    volumes:
+      - ./src/main/resources/db/migration:/flyway/sql
+
+  app:
+    build: .
+    container_name: spring-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      flyway:
+        condition: service_completed_successfully
+    env_file: .env
+    ports:
+      - "8080:8080"
+
+  adminer:
+    image: adminer
+    container_name: adminer-ui
+    restart: always
+    ports:
+      - "8081:8080"

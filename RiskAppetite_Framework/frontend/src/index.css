@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1B4F8A;
+  --primary-light: #2a6ab5;
+  --primary-dark: #0f3566;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
