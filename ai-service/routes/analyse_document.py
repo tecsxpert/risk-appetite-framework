@@ -20,7 +20,7 @@ def analyse_document():
         prompt = f"""Analyse this risk item. Return ONLY valid JSON:
 {{
   "findings": [
-    {{"type": "risk or insight", "title": "short title", "description": "detail", "severity": "LOW/MEDIUM/HIGH", "category": "category"}}
+    {{"type": "risk", "title": "short title", "description": "detail", "severity": "LOW/MEDIUM/HIGH", "category": "category"}}
   ],
   "summary": "brief summary",
   "total_findings": <number>,
@@ -28,6 +28,7 @@ def analyse_document():
   "insight_count": <number>
 }}
 
+Use "risk" for negative findings and "insight" for positive findings.
 Text: {text[:500]}"""
 
         ai_response = groq_client.call(prompt)
