@@ -1,0 +1,29 @@
+Risk Appetite Best Practices
+
+A well-defined risk appetite framework helps organizations make informed decisions about the level of risk they are willing to accept in pursuit of their objectives.
+
+Best practices for risk appetite frameworks:
+- Link risk appetite to strategic objectives
+- Use both quantitative and qualitative measures
+- Review and update at least annually
+- Communicate clearly to all staff levels
+- Integrate into performance management
+
+Risk appetite statement components:
+- Overall risk appetite statement
+- Risk tolerance levels by category
+- Key risk indicators and thresholds
+- Escalation procedures
+- Reporting requirements
+
+Common risk categories to address:
+- Credit risk
+- Market risk
+- Operational risk
+- Liquidity risk
+- Compliance risk
+- Strategic risk
+- Reputational risk
+- Technology risk
+
+Organizations that implement robust risk appetite frameworks demonstrate better risk-adjusted returns and stronger stakeholder confidence.

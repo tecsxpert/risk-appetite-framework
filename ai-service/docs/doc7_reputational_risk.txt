@@ -1,0 +1,17 @@
+Reputational Risk Appetite Framework
+
+Reputational risk is the risk of loss arising from negative public opinion, which may impair an organization's ability to retain and attract customers, staff, or business partners.
+
+Reputational risk appetite:
+- Zero tolerance for ethical violations
+- Maximum acceptable negative media coverage: monitored weekly
+- Customer satisfaction score minimum: 75%
+- Employee engagement score minimum: 70%
+
+Reputational risk triggers:
+- Data breaches affecting customer data
+- Regulatory enforcement actions
+- Senior management misconduct
+- Product failures causing customer harm
+
+Mitigation strategies include strong corporate governance, transparent communication, proactive stakeholder engagement, and robust crisis management plans.

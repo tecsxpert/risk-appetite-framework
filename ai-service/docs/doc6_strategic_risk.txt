@@ -1,0 +1,17 @@
+Strategic Risk Appetite Framework
+
+Strategic risk refers to the risk of loss arising from adverse business decisions, improper implementation of decisions, or lack of responsiveness to industry changes.
+
+Strategic risk appetite components:
+- Maximum acceptable revenue concentration: 30% from single product
+- Minimum acceptable return on equity: 12%
+- Maximum acceptable cost-to-income ratio: 55%
+- New market entry risk tolerance: moderate
+
+Strategic risk indicators:
+- Market share trends
+- Customer acquisition and retention rates
+- Product profitability metrics
+- Competitor analysis results
+
+Organizations should conduct annual strategic risk reviews aligned with business planning cycles.

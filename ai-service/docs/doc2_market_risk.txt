@@ -1,0 +1,17 @@
+Market Risk Appetite Framework
+
+Market risk refers to the risk of losses in positions arising from movements in market prices. This includes equity risk, interest rate risk, currency risk, and commodity risk.
+
+Market risk appetite should define:
+- Value at Risk (VaR) limits: maximum acceptable daily loss at 95% confidence
+- Stop-loss limits: automatic position closure at predefined loss levels
+- Concentration limits: maximum exposure to single asset class
+- Liquidity requirements: minimum percentage of liquid assets
+
+Key market risk metrics:
+- VaR: measures potential loss over specific time horizon
+- Expected Shortfall: average loss beyond VaR threshold
+- Stress Test Results: losses under extreme market scenarios
+- Beta: sensitivity of portfolio to market movements
+
+Organizations should review market risk appetite quarterly and adjust limits based on market conditions and organizational risk tolerance.

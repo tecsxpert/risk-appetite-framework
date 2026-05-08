@@ -1,0 +1,17 @@
+Compliance Risk Appetite Framework
+
+Compliance risk is the risk of legal or regulatory sanctions, financial loss, or reputational damage resulting from failure to comply with laws, regulations, or internal policies.
+
+Compliance risk appetite:
+- Zero tolerance for regulatory breaches
+- Zero tolerance for anti-money laundering violations
+- Maximum acceptable compliance findings per audit: 5 minor findings
+- Mandatory staff compliance training completion: 100%
+
+Key compliance requirements:
+- Anti-Money Laundering regulations
+- Know Your Customer requirements
+- Data protection regulations (GDPR)
+- Capital adequacy requirements (Basel III)
+
+Compliance monitoring includes regular internal audits, regulatory reporting, staff training programs, and independent compliance reviews.

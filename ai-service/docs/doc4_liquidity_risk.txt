@@ -1,0 +1,17 @@
+Liquidity Risk Appetite Framework
+
+Liquidity risk is the risk that an organization cannot meet its financial obligations as they come due without incurring unacceptable losses. Managing liquidity risk is critical for financial stability.
+
+Liquidity risk appetite should specify:
+- Minimum liquidity coverage ratio: 100% as per Basel III requirements
+- Minimum net stable funding ratio: 100%
+- Stress scenario survival period: minimum 30 days
+- Maximum reliance on short-term funding: 20% of total funding
+
+Liquidity risk monitoring:
+- Daily cash flow forecasting
+- Weekly liquidity stress testing
+- Monthly funding gap analysis
+- Quarterly review of liquidity contingency plan
+
+Early warning indicators include rapid deposit outflows, inability to roll over wholesale funding, and credit rating downgrades.
